@@ -6,7 +6,8 @@ import axios from 'axios';
 import ArticleForm from '../../components/createArticle';
 import SkeletonArticle from '../../components/sceletonArticle';
 import { ArticleList } from '../../components/articlesList';
-import Modal from '../../components/Modal';
+import Modal from '../../components/modal';
+
 
 export default function AdminPage() {
   const { userId, isLoaded } = useAuth();

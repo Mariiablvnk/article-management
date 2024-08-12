@@ -18,6 +18,7 @@ const Modal: React.FC<ModalProps> = ({ message, type, onClose }) => {
                     onClick={onClose}
                 >
                     Close
+                    
                 </button>
             </div>
         </div>
