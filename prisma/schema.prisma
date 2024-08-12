@@ -1,0 +1,44 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       String     @unique  
+  email     String    @unique
+  password String
+  username String
+  role     Role      @default(USER)
+
+}
+
+model Article {
+  id             String     @unique
+  title          String
+  subtitle       String?
+  content        String
+  image          String?
+  pubDate        DateTime
+  author         String
+  link           String
+  enclosureUrl  String?
+  itunesTitle    String?
+  itunesAuthor   String?
+  itunesImage    String?
+  itunesDuration String?
+  itunesSummary  String?
+  itunesSubtitle String?
+  itunesExplicit Boolean?
+  itunesEpisodeType String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}

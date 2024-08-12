@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Article Management System
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The Article Management System is a Next.js application for managing and displaying articles. It includes functionalities for creating, reading, and updating articles, and uses modern technologies such as TypeScript, Prisma, and Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Article Management**: Create, update, and view articles.
+- **Rich Text Formatting**: Handle and display rich text, including links.
+- **Responsive Design**: Styled with Tailwind CSS for a responsive and modern interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **TypeScript**: Adds static typing to JavaScript for improved development.
+- **Prisma**: ORM for interacting with the database.
+- **Tailwind CSS**: Utility-first CSS framework for custom styling.
+- **Axios**: HTTP client for making API requests.
+- **Clerk**: Authentication and user management.
 
-## Learn More
+## Setup and Installation
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v14 or higher)
+- npm or yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. **Clone the repository**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    git clone https://github.com/mariia/article-management.git
+    cd article-management
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. **Install dependencies**
+
+    Using npm:
+
+    ```bash
+    npm install
+    ```
+
+    Or using yarn:
+
+    ```bash
+    yarn install
+    ```
+
+3. **Set up environment variables**
+
+    Create a `.env` file in the root directory of the project and add the necessary environment variables. Use `.env.example` as a reference.
+
+    ```plaintext
+    DATABASE_URL=your_database_url
+    ```
+
+4. **Run database migrations**
+
+    ```bash
+    npx prisma migrate dev
+    ```
+
+5. **Seed the database (optional)**
+
+    ```bash
+    npx ts-node prisma/seed.ts
+    ```
+
+6. **Start the development server**
+
+    Using npm:
+
+    ```bash
+    npm run dev
+    ```
+
+    Or using yarn:
+
+    ```bash
+    yarn dev
+    ```
+
+    The application will be available at [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+- **Development**: `npm run dev` or `yarn dev` - Starts the Next.js development server.
+- **Build**: `npm run build` or `yarn build` - Builds the application for production.
+- **Start**: `npm start` or `yarn start` - Starts the production server.
+- **Lint**: `npm run lint` or `yarn lint` - Runs ESLint for code quality checks.
+
+## API Endpoints
+
+### GET `/api/articles`
+
+Fetches a list of all articles.
+
+### POST `/api/articles/create`
+
+Creates a new article. Requires article data in the request body.
+
+### PATCH `/api/articles/:id`
+
+Updates an existing article by ID. Requires updated article data in the request body.
+
+## Components
+
+- **ArticlePage**: Displays a single article with rich text formatting and links.
+- **SkeletonArticle**: Provides a loading skeleton for articles.
+- **ProductPlate**: Displays product information with functionality for favorites.
+
+## Usage
+
+1. **Viewing Articles**: Navigate to the main page to view the list of articles.
+2. **Creating Articles**: Use the provided form to create new articles.
+3. **Editing Articles**: Select an article to update its details.
+4. **Rich Text Handling**: Links within articles are clickable and styled.
+
+## Contributing
+
+Contributions are welcome! Please submit issues and pull requests. Make sure to follow the code style and test your changes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+- **Mariia** - [GitHub Profile](https://github.com/mariia)
