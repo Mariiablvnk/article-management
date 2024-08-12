@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:seed": "ts-node prisma/seed.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "seed": "npm run prisma:generate && npm run prisma:migrate && npm run prisma:seed"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
