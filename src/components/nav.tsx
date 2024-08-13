@@ -61,9 +61,6 @@ const Nav: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    router.push('/main'); 
-  }, [role])
 
   return (
     <div className="flex z-101 w-full flex-row justify-between py-4 px-8 items-center">
